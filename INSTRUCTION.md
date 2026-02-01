@@ -1,3 +1,10 @@
+Preconditions
+```bash
+kind create cluster --config cluster.yml
+./bootstrap.sh
+kubectl apply -f .infrastructure/ingress/ingress.yml
+```
+
 Check all nodes and their taints
 ```bash
 kubectl get nodes -o jsonpath="{range .items[*]}{.metadata.name} {.spec.taints[]}{\"\n\"}"
